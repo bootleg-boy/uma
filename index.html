@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uma Mahesh Foods</title>
+    <style>
+        /* Reset & base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #fffdf7;
+            color: #333;
+        }
+
+        header {
+            background: #d35400;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 1rem;
+            min-height: 100vh;
+            /* 👈 makes section fill full screen height */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url("bg.jpg") center/cover no-repeat;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                    url("bg_mobile.jpg") center/cover no-repeat;
+                /* 👈 mobile version */
+            }
+        }
+
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        footer {
+            background: #f1f1f1;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Mobile tweaks */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Uma Mahesh Foods
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Uma Mahesh Foods</h1>
+        <p>Delicious and authentic flavors crafted with love. Serving quality food you can trust.</p>
+    </section>
+
+    <footer>
+        © 2025 Uma Mahesh Foods. All rights reserved.
+    </footer>
+</body>
+
+</html>
