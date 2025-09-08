@@ -2,100 +2,179 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uma Mahesh Foods</title>
-    <style>
-        /* Reset & base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uma Mahesh Foods</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fffdf7;
+    color: #333;
+  }
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background: #fffdf7;
-            color: #333;
-        }
+  header {
+    background: #d35400;
+    padding: 1rem 2rem;
+    color: white;
+  }
 
-        header {
-            background: #d35400;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-        .hero {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 1rem;
-            min-height: 100vh;
-            /* 👈 makes section fill full screen height */
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url("backg.png") center/cover no-repeat;
-            color: white;
-        }
+  .logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
 
-        @media (max-width: 600px) {
-            .hero {
-                background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                    url("backg_m.png") center/cover no-repeat;
-                /* 👈 mobile version */
-            }
-        }
+  .btn {
+    background: white;
+    color: #d35400;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .btn:hover {
+    background: #fbeee0;
+  }
+
+  /* Catalog section with background */
+.catalog {
+  position: relative;
+  min-height: 100vh; /* ✅ makes section always fill screen */
+  padding: 3rem 1rem;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("backg.png") center/cover no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* ✅ centers content vertically */
+}
 
 
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+  .catalog h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-        }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
-        footer {
-            background: #f1f1f1;
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
+  .product {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    color: #333;
+  }
 
-        /* Mobile tweaks */
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
+  .product:hover {
+    transform: translateY(-4px);
+  }
 
-            .hero p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+  .product img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+  }
+
+  .product h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .price {
+    color: #d35400;
+    font-weight: bold;
+  }
+
+  footer {
+    background: #f1f1f1;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* Mobile tweaks */
+  @media (max-width: 600px) {
+    .logo {
+      font-size: 1rem;
+    }
+
+    .btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .catalog h2 {
+      font-size: 1.5rem;
+    }
+
+    .product img {
+      height: 140px;
+    }
+  }
+</style>
 </head>
 
 <body>
-    <header>
-        Uma Mahesh Foods
-    </header>
+  <header>
+    <div class="header-content">
+      <div class="logo">Welcome to Uma Mahesh Foods</div>
+      <a href="#contact" class="btn">Contact Us</a>
+    </div>
+  </header>
 
-    <section class="hero">
-        <h1>Welcome to Uma Mahesh Foods</h1>
-        <p>Delicious and authentic flavors crafted with love. Serving quality food you can trust.</p>
-    </section>
+  <!-- 🛒 Product Catalog Section -->
+  <section class="catalog hero">
+    <div class="overlay">
+      <h2>Our Products</h2>
+      <div class="grid">
+        <div class="product">
+          <img src="achar.png" alt="Product 1">
+          <h3>Achar</h3>
+          <p class="price">£30</p>
+        </div>
+        <div class="product">
+          <img src="ladu.png" alt="Product 2">
+          <h3>Ladu</h3>
+          <p class="price">£30</p>
+        </div>
+        <div class="product">
+          <img src="chakli.png" alt="Product 3">
+          <h3>Chakli</h3>
+          <p class="price">£30</p>
+        </div>
+        <div class="product">
+          <img src="mukh.png" alt="Product 4">
+          <h3>Mukhwas</h3>
+          <p class="price">£30</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        © 2025 Uma Mahesh Foods. All rights reserved.
-    </footer>
+  <footer id="contact">
+    © 2025 Uma Mahesh Foods. All rights reserved.
+  </footer>
 </body>
 
 </html>
